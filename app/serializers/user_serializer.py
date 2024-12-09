@@ -16,4 +16,4 @@ class UserSerializer(serializers.ModelSerializer):
             user = User.objects.create(**validated_data)
             return user
         except Exception as ex:
-            raise f'Something went wrong creating user record. More info: {ex}'
+            raise ex

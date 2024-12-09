@@ -19,7 +19,9 @@ from django.urls import path
 from app import views
 
 urlpatterns = [
-    path('admin', admin.site.urls),
-    path('users/<str:email>', views.get_user_by_email, name='get_user_by_email'),
-    path('users', views.create_user, name='create_user')
+    path('admin/', admin.site.urls),
+    path('users/get/', views.get_user_by_email, name='get_user_by_email'),
+    path('users/post/', views.post_user, name='post_user'),
+    path('users/patch/<str:identifier>/', views.patch_user, name='patch_user'),
+    path('users/delete/<str:identifier>/', views.delete_user, name='delete_user')
 ]
